@@ -7,10 +7,10 @@ function get_mnist_sample_1_network(param_dict::Dict; name::String="")
 
     # Also, see https://nbviewer.jupyter.org/github/vtjeng/MIPVerify.jl/blob/master/examples/01_importing_your_own_neural_net.ipynb#Composing-the-network] for an explanation.
     n1 = Sequential([
-        # our input is in a 4-dimensional tensor, so we have to flatten the input to begin with.
+        # our input is in a 4-dimensional tensor, so we have to begin by flattening the input
         Flatten(4),
         dense_1,
-        # for optimal solve performance, set the first layer to use only `interval_arithmetic` tightening.
+        # for optimal solve speed, set the first layer to use only `interval_arithmetic` tightening.
         ReLU(interval_arithmetic),
         dense_2,
         ReLU(),
