@@ -1,14 +1,13 @@
 # MIPVerify-converter
 
-This repository provides a starting point for reading in models for verification via the [`MIPVerify.jl`](https://github.com/vtjeng/MIPVerify.jl/) tool, updated for the [v0.3.1 release](https://github.com/vtjeng/MIPVerify.jl/releases/tag/v0.3.1).
+This repository provides a starting point for reading in models for verification via the [`MIPVerify.jl`](https://github.com/vtjeng/MIPVerify.jl/) tool. It is updated for the [v0.3.1 release](https://github.com/vtjeng/MIPVerify.jl/releases/tag/v0.3.1).
 
 ## Quick Start
 
 1. Models are expected in the [`onnx` format](https://onnx.ai/). Most common frameworks / tools [can easily export to the `onnx` format](https://github.com/onnx/tutorials#converting-to-onnx-format).
 2. `convert.py` extracts the model weights and biases, saving them to a `.mat` file.
-
-- You will need to install the Python packages specified in [`REQUIREMENTS.txt`](REQUIREMENTS.txt). This can either be done system-wide or [using a virtual environment](https://docs.python.org/3/library/venv.html#creating-virtual-environments).
-- The `networks` folder provides examples of two models in `.onnx` format, with the corresponding `.mat` files produced by `convert.py`. (Note that the `.mat` binary files produced differ at the byte level from run to run, but contain the same data.)
+   - You will need to install the Python packages specified in [`REQUIREMENTS.txt`](REQUIREMENTS.txt). This can either be done system-wide or [using a virtual environment](https://docs.python.org/3/library/venv.html#creating-virtual-environments).
+   - The `networks` folder provides examples of two models in `.onnx` format, with the corresponding `.mat` files produced by `convert.py`. (Note that the `.mat` binary files produced differ at the byte level from run to run, but contain the same data.)
 
 ```sh
 # after installing REQUIREMENTS
