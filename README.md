@@ -4,21 +4,23 @@ This repository provides a starting point for reading in models for verification
 
 ## Quick Start
 
-1. Models are expected in the [`onnx` format](https://onnx.ai/). Most common frameworks / tools [can easily export to the `onnx` format](https://github.com/onnx/tutorials#converting-to-onnx-format).
-2. `convert.py` extracts the model weights and biases, saving them to a `.mat` file.
-   - You will need to install the Python packages specified in [`REQUIREMENTS.txt`](REQUIREMENTS.txt). This can either be done system-wide or [using a virtual environment](https://docs.python.org/3/library/venv.html#creating-virtual-environments).
-   - The `networks` folder provides examples of two models in `.onnx` format, with the corresponding `.mat` files produced by `convert.py`. (Note that the `.mat` binary files produced differ at the byte level from run to run, but contain the same data.)
+1. **`?` -> `.onnx`**:
+   - Models are expected in the [`onnx` format](https://onnx.ai/). Most common frameworks / tools [can easily export to the `onnx` format](https://github.com/onnx/tutorials#converting-to-onnx-format).
+2. **`.onnx` -> `.mat`**:
+   - `convert.py` extracts the model weights and biases, saving them to a`.mat` file.
+     - You will need to install the Python packages specified in [`REQUIREMENTS.txt`](REQUIREMENTS.txt). This can either be done system-wide or [using a virtual environment](https://docs.python.org/3/library/venv.html#creating-virtual-environments).
+     - The `networks` folder provides examples of two models in `.onnx` format, with the corresponding `.mat` files produced by `convert.py`. (Note that the `.mat` binary files produced differ at the byte level from run to run, but contain the same data.)
 
 ```sh
 # after installing REQUIREMENTS
 $ ./convert.py -i networks/mnist_sample_1.onnx -o networks/mnist_sample_1.mat
 ```
 
-3. Specify the structure of the model using `MIPVerify` primitives in Julia. See [`check.jl`](check.jl) for instructions, and [`mnist_sample_1.jl`](mnist_sample_1.jl) and [`mnist-net_256x4.jl](mnist-net_256x4.jl) for examples.
+3. **`.mat` -> `MIPVerify`-compatible model specification**:
+   - Specify the structure of the model using `MIPVerify` primitives in Julia. See [`check.jl`](check.jl) for instructions, and [`mnist_sample_1.jl`](mnist_sample_1.jl) and [`mnist-net_256x4.jl](mnist-net_256x4.jl) for examples.
+   - Import the model weights (again, see [`check.jl`](check.jl)) and validate that the model has the expected accuracy.
 
-> :warning: Note that you only need to write code once per architecture.
-
-4. Import the model weights (again, see [`check.jl`](check.jl)) and validate that the model has the expected accuracy.
+> :warning: You should need to write Julia code once for each architecture.
 
 ## Common Issues
 
