@@ -48,7 +48,7 @@ This class of error message often occurs when the weights of the Linear layer ar
 
 The reference test accuracies of the sample MNIST classifier networks are provided below.
 
-| Name                   | Test Accuracy | Source                                                                                                                                       |
-| ---------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `mnist_sample_1.onnx`  | 0.9782        | Courtesy [Matthias K ̈onig](https://www.universiteitleiden.nl/en/staffmembers/matthias-konig#tab-1)                                           |
-| `mnist-net_256x4.onnx` | 0.9764        | [VNN-Comp 2020 Benchmark](https://github.com/verivital/vnn-comp/tree/5d146cb1c0179a97fc75a3521883d6765142f092/2020/PWL/benchmark/mnist/oval) |
+| Name                   | Test Accuracy | Source                                                                                                                                                                                                                                                               |
+| ---------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `mnist_sample_1.onnx`  | 0.9782        | Network found at `resources/mnist/mnist-net.h5` for [`venus-1.0.1`](https://vas.doc.ic.ac.uk/software/neural/), retrieved 2021-04-08. Converted to `.onnx` format courtesy [Matthias König](https://www.universiteitleiden.nl/en/staffmembers/matthias-konig#tab-1). |
+| `mnist-net_256x4.onnx` | 0.9764        | [VNN-Comp 2020 Benchmark](https://github.com/verivital/vnn-comp/tree/5d146cb1c0179a97fc75a3521883d6765142f092/2020/PWL/benchmark/mnist/oval)                                                                                                                         |
