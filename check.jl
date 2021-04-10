@@ -34,6 +34,9 @@ Here's what you need to do.
      LAYER_NAME/BIAS_NAME.
 """
 
+# Set the working directory to be the folder this script is contained in
+cd(dirname(@__FILE__))
+
 mnist = read_datasets("mnist")
 
 ## 1. mnist_sample_1
