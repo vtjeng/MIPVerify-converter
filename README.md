@@ -1,6 +1,8 @@
 # MIPVerify-converter
 
-This repository provides a starting point for reading in models for verification via the [`MIPVerify.jl`](https://github.com/vtjeng/MIPVerify.jl/) tool. It is updated for the [v0.3.1 release](https://github.com/vtjeng/MIPVerify.jl/releases/tag/v0.3.1).
+This repository provides a starting point for reading in models for verification with the [`MIPVerify.jl`](https://github.com/vtjeng/MIPVerify.jl/) tool. It is updated for the [v0.3.1 release](https://github.com/vtjeng/MIPVerify.jl/releases/tag/v0.3.1).
+
+**Why do I need this?**: The `MIPVerify.jl` package does not currently support loading the structure and weights of a saved model from tools like [Tensorflow](https://www.tensorflow.org/tutorials/keras/save_and_load) or [Pytorch](https://pytorch.org/tutorials/beginner/saving_loading_models.html). Instead, users need to save the weights to a `.mat` file and specify the structure of the model in Julia. We describe how to do so, with accompanying code examples for two different models.
 
 ## Quick Start
 
@@ -46,7 +48,7 @@ This class of error message often occurs when the weights of the Linear layer ar
 
 ## Sample Networks
 
-The reference test accuracies of the sample MNIST classifier networks are provided below.
+The reference test accuracies of the sample MNIST classifier networks found in this repository are provided below.
 
 | Name                   | Test Accuracy | Source                                                                                                                                                                                                                                                                                                                                                              |
 | ---------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
