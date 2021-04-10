@@ -15,6 +15,7 @@ import onnxmltools
 
 SCRIPT_DIRECTORY = os.path.dirname(os.path.realpath(__file__))
 
+# Download `resources/mnist/mnist-net.h5` from VENUS package, and place it at this path.
 model = keras.models.load_model(os.path.join(SCRIPT_DIRECTORY, "mnist_sample_1.h5"))
 onnx_model = onnxmltools.convert_keras(model)
 onnxmltools.utils.save_model(
